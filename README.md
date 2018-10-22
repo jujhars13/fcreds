@@ -19,9 +19,6 @@ Commands:
   help [<command>...]
     Show help.
 
-  create <name> <value> [<description>]
-    Create a secret
-
   exec --secret-name=SECRET-NAME <command>...
     Execute a command with all secrets loaded as environment variables.
 ```
@@ -37,6 +34,20 @@ aws secretsmanager create-secret --name secret-friendly-name --secret-string sec
 * Execute `env` command, all secrets are loaded as environment variables.
 ```
 awssecrets -r us-east-1 exec -n secret-name-1 -n secret-name-2 -- env
+```
+
+# IAM policy
+
+To be able to access the secret value, any role used to call fcreds will require an IAM policy that looks like this
+```
+- PolicyName: SecretsManagerAccess
+  PolicyDocument:
+    Statement:
+    - Effect: Allow
+      Action:
+      - secretsmanager:GetSecretValue
+      Resource:
+      - arn:aws:secretsmanager:region:accountId:secret:secretsName-*
 ```
 
 # release
