@@ -11,7 +11,7 @@ import (
 )
 
 var (
-	app                  = kingpin.New("awssecrets", "A command line tool to get AWS secrets.")
+	app                  = kingpin.New("awssecrets", "A CLI tool to get secrets from AWS secrets manager")
 	region               = app.Flag("region", "Configure the AWS region").Required().Short('r').String()
 	profile              = app.Flag("profile", "Configure the AWS profile").Short('p').String()
 	cmdExecute           = app.Command("exec", "Execute a command with all secrets loaded as environment variables.")
