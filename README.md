@@ -36,7 +36,7 @@ aws secretsmanager create-secret --name secret-friendly-name --secret-string sec
 awssecrets -r us-east-1 exec -n secret-name-1 -n secret-name-2 -- env
 ```
 
-# IAM policy
+## IAM policy
 
 To be able to access the secret value, any role used to call fcreds will require an IAM policy that looks like this
 ```
@@ -50,7 +50,7 @@ To be able to access the secret value, any role used to call fcreds will require
       - arn:aws:secretsmanager:region:accountId:secret:secretsName-*
 ```
 
-# release
+## Release
 
 To release a new version you'll need Docker running on your machine and the environment variable GITHUB_TOKEN set locally. Then we can run
 ```
