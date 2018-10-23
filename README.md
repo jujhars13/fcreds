@@ -2,7 +2,7 @@
 
 Fcreds awssecrets is a command line tool to interact with [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).
 
-awssecrets is written in go and was inspired by https://github.com/Versent/unicreds
+awssecrets is written in Go and was inspired by https://github.com/Versent/unicreds
 
 ## Usage
 
