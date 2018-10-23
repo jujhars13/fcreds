@@ -39,7 +39,7 @@ awssecrets -r us-east-1 exec -n secret-name-1 -n secret-name-2 -- env
 ## IAM policy
 
 To be able to access the secret value, any role used to call fcreds will require an IAM policy that looks like this
-```
+```yaml
 - PolicyName: SecretsManagerAccess
   PolicyDocument:
     Statement:
